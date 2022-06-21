@@ -1,7 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import Card from '../components/Card';
-import dummyData from "../dummyData.json"; // To be replaced with your api response data
 import axios from "axios";
+import Title from '../components/Title';
+
+
 
 
 export const Home = () => {
@@ -16,14 +18,15 @@ export const Home = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, [elephants]);
+  }, [setElephants]);
+
 
   return (
     <>
-      <h1>Elephants</h1>
-      <div className="App" style={{display: "grid", gridTemplateColumns: "1fr 1fr 1fr", rowGap: "10px", columnGap: "20px"}}>
-        {elephants.map((elephant) => {
-          return <Card image={elephant.image} name={elephant.name} sex={elephant.sex} note={elephant.note} id={elephant.id} />
+      <Title>Elephants</Title>
+      <div className="App">
+        {elephants.slice(0, 10).map((elephant) => {
+          return <Card image={elephant.image} name={elephant.name} sex={elephant.sex} note={elephant.note} id={elephant._id} />
         })}
       </div>     
     </>

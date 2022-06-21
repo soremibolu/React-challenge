@@ -4,16 +4,16 @@ import { Link } from "react-router-dom";
 
 
 const Cardcover = styled.div`
+float:left;
 width:350px ;
 height: 450px;
 display:inline-block;
 background-color:white;
-background-position:center;
-background-size:cover;
 border:1px solid lightgrey;
 border-radius: .2rem;
 box-shadow: 10px 10px 5px lightgrey;
 margin-bottom:2rem;
+margin-left:10px;
 
   .port-details{
     width:100%;
@@ -23,9 +23,12 @@ margin-bottom:2rem;
     .portimage{
         width:100%;
         height:100%;
+        background-position:center;
+        background-size:cover;
     }
   }
   .details{
+    width:100%;
     h1,h2,p{
       margin: 10px 10px;
     }
@@ -41,30 +44,19 @@ margin-bottom:2rem;
 `;
 
 
-
-/**
- * This should be a React component that, at the very least, comprises an image component a title and a description or subheading.
- * 
- * @param props 
- * @returns 
- * 
- */
-
-
-
 const Card = (props) => {
   const {id,image, name, sex, note} = props;
   return (
     <>
       <Cardcover>
-      <Link to={`/property/${id}`} style={{color:'black', textDecoration: 'none'}}>
+      <Link to={`/details/${id}`} style={{color:'black', textDecoration: 'none'}}>
         <div className="port-details">
-              <div className="portimage" style={{backgroundImage: `url(${image})`, backgroundSize: "cover", backgroundPosition: "center"}}></div>   
+              <div className="portimage" style={{backgroundImage: `url(${image})`}}></div>   
         </div>
         <div className="details">
           <h1>{name}</h1>
-          <h2>Sex: {sex}</h2>
           <p>{note}</p>
+          <h2>Sex: {sex}</h2>
         </div>
         
       </Link>
@@ -73,4 +65,4 @@ const Card = (props) => {
   )
 }
 
-export default Card
+export default Card;
