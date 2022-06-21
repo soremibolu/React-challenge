@@ -64,7 +64,7 @@ const Card = (props) => {
         <div className="details">
           <h1>{name}</h1>
           <h2>Sex: {sex}</h2>
-          <p>{note} wkcvw cvf r gv ersg eg rst grt g rtsrtgrt bg rtsbg rst b srb srt b rtbsgb gf </p>
+          <p>{note}</p>
         </div>
         
       </Link>

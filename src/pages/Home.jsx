@@ -12,8 +12,7 @@ export const Home = () => {
       .get(`https://elephant-api.herokuapp.com/elephants`)
       .then((res) => {
         setElephants(res.data);
-        //console.log(elephants);
-      })
+        })
       .catch((err) => {
         console.log(err);
       });
@@ -24,7 +23,7 @@ export const Home = () => {
       <h1>Elephants</h1>
       <div className="App" style={{display: "grid", gridTemplateColumns: "1fr 1fr 1fr", rowGap: "10px", columnGap: "20px"}}>
         {elephants.map((elephant) => {
-          return <Card image={elephants.image} name={elephants.name} sex={elephants.sex} note={elephants.note} id={elephants.id} />
+          return <Card image={elephant.image} name={elephant.name} sex={elephant.sex} note={elephant.note} id={elephant.id} />
         })}
       </div>     
     </>
