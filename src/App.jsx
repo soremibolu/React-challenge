@@ -19,7 +19,7 @@ class App extends Component{
             <section>
                 <Routes>
                   <Route path={"/"} element={<Home />} />
-                  <Route path={"/Details"} element={<Details />} />
+                  <Route path={"/details/:id"} element={<Details />} />
                 </Routes>
             </section>
           </main>
