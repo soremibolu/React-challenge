@@ -26,13 +26,12 @@ margin-bottom:2rem;
     }
   }
   .details{
-    h1,h2,ul{
+    h1,h2,p{
       margin: 10px 10px;
     }
-    ul{
-      margin:10px 30px;
+    p{
+      font-size:14px
     }
-
     h2{
       font-size:16px;
       color:darkgrey;
@@ -54,20 +53,18 @@ margin-bottom:2rem;
 
 
 const Card = (props) => {
-  const {image, name, home_port, roles} = props;
+  const {id,image, name, sex, note} = props;
   return (
     <>
       <Cardcover>
-      <Link to="/property" style={{color:'black', textDecoration: 'none'}}>
+      <Link to={`/property/${id}`} style={{color:'black', textDecoration: 'none'}}>
         <div className="port-details">
               <div className="portimage" style={{backgroundImage: `url(${image})`, backgroundSize: "cover", backgroundPosition: "center"}}></div>   
         </div>
         <div className="details">
           <h1>{name}</h1>
-          <h2>{home_port}</h2>
-          <ul>
-            {roles.map((role) => <li key={role}>{role}</li>)}
-          </ul>
+          <h2>Sex: {sex}</h2>
+          <p>{note} wkcvw cvf r gv ersg eg rst grt g rtsrtgrt bg rtsbg rst b srb srt b rtbsgb gf </p>
         </div>
         
       </Link>
